@@ -39,7 +39,9 @@ fun ToDoElement(
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold)
                 Spacer(modifier = Modifier.width(8.dp))
-                IconButton(onClick = { TaskEvent.DeleteTask(task)}) {
+                IconButton(onClick = {
+                    onEvent(TaskEvent.OnDeleteTaskClick(task))
+                }) {
                     Icon(imageVector = Icons.Default.Delete,
                     contentDescription = "Delete")
                     

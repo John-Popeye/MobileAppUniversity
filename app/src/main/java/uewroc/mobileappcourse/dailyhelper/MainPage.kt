@@ -1,5 +1,7 @@
 package uewroc.mobileappcourse.dailyhelper
 
+import android.content.Intent
+import androidx.annotation.ContentView
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -12,12 +14,15 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.NavController
+import uewroc.mobileappcourse.dailyhelper.calculator.CalculatorActivity
 import uewroc.mobileappcourse.dailyhelper.general.common.Screen
 import uewroc.mobileappcourse.dailyhelper.todo.Routes
 import uewroc.mobileappcourse.dailyhelper.ui.theme.Basic_green
@@ -26,6 +31,7 @@ import uewroc.mobileappcourse.dailyhelper.ui.theme.Basic_teal
 
 @Composable
 fun MainPage(navController: NavController) {
+    var context = LocalContext.current
     Column(
         Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
@@ -36,7 +42,8 @@ fun MainPage(navController: NavController) {
                 .fillMaxSize()
                 .weight(1f)
                 .clickable {
-                    navController.navigate(Routes.TASK_LIST)
+                    val intent = Intent(context, CalculatorActivity::class.java)
+                    startActivity(context, intent, null)
                 }
         ) {
             Column(Modifier.background(Basic_green)) {
@@ -63,7 +70,9 @@ fun MainPage(navController: NavController) {
             Modifier
                 .fillMaxSize()
                 .weight(1f)
-                .clickable { }
+                .clickable {
+                    navController.navigate(uewroc.mobileappcourse.dailyhelper.notes.feature_note.presentation.util.Screen.NotesScreen.route)
+                }
         ) {
             Column(Modifier.background(Basic_offwhite)) {
 
@@ -88,7 +97,7 @@ fun MainPage(navController: NavController) {
                 .fillMaxSize()
                 .weight(1f)
                 .clickable {
-
+                    navController.navigate(Routes.TASK_LIST)
                 }
         ) {
             Column(Modifier.background(Basic_teal)) {

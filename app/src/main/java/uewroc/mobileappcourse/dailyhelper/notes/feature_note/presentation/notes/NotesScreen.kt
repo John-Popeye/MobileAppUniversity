@@ -1,5 +1,6 @@
 package uewroc.mobileappcourse.dailyhelper.notes.feature_note.presentation.notes
 
+import android.annotation.SuppressLint
 import androidx.compose.animation.*
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -8,7 +9,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.Sort
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -21,6 +22,7 @@ import uewroc.mobileappcourse.dailyhelper.notes.feature_note.presentation.notes.
 import uewroc.mobileappcourse.dailyhelper.notes.feature_note.presentation.util.Screen
 import kotlinx.coroutines.launch
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @ExperimentalAnimationApi
 @Composable
 fun NotesScreen(
@@ -64,7 +66,7 @@ fun NotesScreen(
                     },
                 ) {
                     Icon(
-                        imageVector = Icons.Default.Sort,
+                        imageVector = Icons.Default.Add,
                         contentDescription = "Sort"
                     )
                 }

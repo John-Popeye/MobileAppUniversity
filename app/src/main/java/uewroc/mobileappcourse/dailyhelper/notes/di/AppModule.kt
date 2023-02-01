@@ -5,7 +5,6 @@ import androidx.room.Room
 import uewroc.mobileappcourse.dailyhelper.notes.feature_note.data.data_source.NoteDatabase
 import uewroc.mobileappcourse.dailyhelper.notes.feature_note.data.repository.NoteRepositoryImpl
 import uewroc.mobileappcourse.dailyhelper.notes.feature_note.domain.repository.NoteRepository
-import com.plcoding.cleanarchitecturenoteapp.feature_note.domain.use_case.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

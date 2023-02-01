@@ -17,7 +17,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideTaskDatabase(app: Application): TaskDatabase {
-        return Room.databaseBuilder(app, TaskDatabase::class.java, "task_db").build()
+        return Room.databaseBuilder(app, TaskDatabase::class.java, TaskDatabase.DATABASE_NAME).build()
     }
 
     @Provides

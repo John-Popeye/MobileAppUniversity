@@ -23,7 +23,7 @@ class ToDoViewModel@Inject constructor(private val taskRepository: TaskRepositor
 
     fun onEvent(event: TaskEvent){
         when(event) {
-            is TaskEvent.DeleteTask -> {
+            is TaskEvent.OnDeleteTaskClick -> {
                 viewModelScope.launch {
                     deletedTask = event.task
                     taskRepository.deleteTask(event.task)
